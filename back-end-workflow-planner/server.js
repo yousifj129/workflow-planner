@@ -5,6 +5,7 @@ const morgan = require("morgan")
 const methodOverride = require("method-override")
 const conntectToDB = require('./config/db')
 const authRouter = require('./routes/authRoutes')
+const projectRouter = require('./routes/projectRoutes')
 
 // Middleware
 app.use(express.json())
@@ -18,6 +19,7 @@ conntectToDB()
 
 // Routes go here
 app.use('/auth', authRouter)
+app.use('/projects', projectRouter)
 
 const port = process.env.PORT || 3000
 

@@ -1,38 +1,38 @@
-const {Schema, model, default: mongoose} = require("mongoose")
+const { Schema, model, default: mongoose } = require("mongoose")
 
 const itemSchema = new Schema({
-    project:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:"Project"
+    project: {
+        type: Schema.Types.ObjectId,
+        ref: "Project"
     },
-    positionX:{
-        type:mongoose.Schema.Types.Number,
-        default:0
+    positionX: {
+        type: Number,
+        default: 0
     },
-    positionY:{
-        type:mongoose.Schema.Types.Number,
-        default:0
+    positionY: {
+        type: Number,
+        default: 0
     },
-    width:{
-        type:mongoose.Schema.Types.Number,
-        default:200
+    width: {
+        type: Number,
+        default: 200
     },
-    height:{
-        type:mongoose.Schema.Types.Number,
-        default:200
+    height: {
+        type: Number,
+        default: 200
     },
-    image:{
-        type:mongoose.Schema.Types.String,
+    image: {
+        type: String,
         required: false
     },
-    text:{
-        type:mongoose.Schema.Types.String,
+    text: {
+        type: String,
         required: false
     },
-    type:{
-        type:mongoose.Schema.Types.String,
-        enum : ['text','image'],
-        default: 'text'    
+    type: {
+        type: String,
+        enum: ['text', 'image'],
+        default: 'text'
     }
 })
 
