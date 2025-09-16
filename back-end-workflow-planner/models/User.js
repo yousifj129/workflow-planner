@@ -21,5 +21,4 @@ userSchema.methods.validatePassword = function (password) {
 
 const User = model("User", userSchema)
 
-
 module.exports = User
