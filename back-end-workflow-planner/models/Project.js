@@ -6,11 +6,11 @@ const projectSchema = new Schema({
         required:true
     },
     owner:{
-        type:mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref:"User"
     },
     items:{
-        type:[mongoose.Schema.Types.ObjectId],
+        type:[Schema.Types.ObjectId],
         ref:"Item"
     }
 })
