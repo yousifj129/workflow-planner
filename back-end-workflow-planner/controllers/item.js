@@ -20,6 +20,17 @@ const index = async(req,res)=>{
         return res.status(500).json({error: err.message})
     }
 }
+const projectItems = async(req,res)=>{
+    try {
+        const items = await Item.find(project=req.params.projectId)
+        if(items)
+            return res.status(200).json(items)
+        else
+            return res.sendStatus(404)
+    } catch (err) {
+        return res.status(500).json({error: err.message})
+    }
+}
 
 const details = async(req,res)=>{
     try {
@@ -56,4 +67,4 @@ const deleteItem = async(req,res) =>{
         return res.status(500).json({error: err.message})
     }
 }
-module.exports = {create, index, details, update, deleteItem}
+module.exports = {create, index, projectItems, details, update, deleteItem}
