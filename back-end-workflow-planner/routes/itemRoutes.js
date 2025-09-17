@@ -3,7 +3,7 @@ const {create, index, details, update, deleteItem, projectItems} = require('../c
 
 router.post('/create', create)
 router.get('/', index)
-router.get('/:projectId', projectItems)
+router.get('/project/:projectId', projectItems)
 
 router.get('/:id', details)
 router.put('/update/:id', update)
